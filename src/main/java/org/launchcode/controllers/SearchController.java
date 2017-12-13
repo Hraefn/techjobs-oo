@@ -33,7 +33,7 @@ public class SearchController {
         ArrayList<Job> jobs;
 
         if (searchForm.getSearchField().equals(JobFieldType.ALL)) {
-            jobs = jobData.findByValue(searchForm.getKeyword());
+            jobs = jobData.findByValue(searchForm.getKeyword().toLowerCase());
         } else {
             jobs = jobData.findByColumnAndValue(searchForm.getSearchField(), searchForm.getKeyword());
         }
@@ -44,3 +44,5 @@ public class SearchController {
     }
 
 }
+
+//changes keyword to lowercase so it shows up when you search
